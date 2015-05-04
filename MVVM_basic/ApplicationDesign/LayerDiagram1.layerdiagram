@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="2dc4bebb-30f8-4975-aba2-4d10ff267572" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="1bdfefca-60ae-4142-b023-d673b03544c3" name="Model Layer">
+      <childLayers>
+        <layer Id="e19bd0c9-d5ed-459f-9a58-2547b6ea0714" name="Employee.cs">
+          <references>
+            <reference Id="b45b0b18-aa8d-4714-bc1c-aa1de125f060" name="Employee.cs">
+              <ArtifactNode Label="Employee.cs" Category="CodeSchema_ProjectItem" Id="(Assembly=../myModels/myModels.csproj File=../myModels/Employee.cs)">
+                <Category Ref="File" />
+              </ArtifactNode>
+              <ExpandedNode Id="(Assembly=myModels Namespace=myModels Type=Employee)" Label="Employee" Category="CodeSchema_Class">
+                <LinkCategory Ref="Contains" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+      </childLayers>
+      <references>
+        <reference Id="c9414a7d-540f-447b-8a6e-522448dc5203" name="Employee.cs">
+          <ArtifactNode Label="Employee.cs" Category="CodeSchema_ProjectItem" Id="(Assembly=../myModels/myModels.csproj File=../myModels/Employee.cs)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=myModels Namespace=myModels Type=Employee)" Label="Employee" Category="CodeSchema_Class">
+            <LinkCategory Ref="Contains" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="31c0acb3-6e96-4085-8d01-49de124fd432" name="Business Layer">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="d4a44e37-5a26-40c5-a5aa-971a5647f48c" direction="Forward">
+          <layerMoniker Id="1bdfefca-60ae-4142-b023-d673b03544c3" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="4e811a36-ba61-47bc-ae0b-b380e9085768" name="EmpBusinessCase.cs">
+          <references>
+            <reference Id="51c84c18-2970-42b6-bb46-a842da55631c" name="EmpBusinessCase.cs">
+              <ArtifactNode Label="EmpBusinessCase.cs" Category="CodeSchema_ProjectItem" Id="(Assembly=../Business/Business.csproj File=../Business/EmpBusinessCase.cs)">
+                <Category Ref="File" />
+              </ArtifactNode>
+              <ExpandedNode Id="(Assembly=Business Namespace=Business Type=EmpBusinessCase)" Label="EmpBusinessCase" Category="CodeSchema_Class">
+                <LinkCategory Ref="Contains" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="d0f8d4e8-ebf4-422f-94a0-194c49822e50" name="EmployeeManager.cs">
+          <references>
+            <reference Id="3d132854-4ae3-44e7-855d-1c1bedcefccf" name="EmployeeManager.cs">
+              <ArtifactNode Label="EmployeeManager.cs" Category="CodeSchema_ProjectItem" Id="(Assembly=../Business/Business.csproj File=../Business/EmployeeManager.cs)">
+                <Category Ref="File" />
+              </ArtifactNode>
+              <ExpandedNode Id="(Assembly=Business Namespace=myModels Type=EmployeeManager)" Label="EmployeeManager" Category="CodeSchema_Class">
+                <LinkCategory Ref="Contains" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+      </childLayers>
+      <references>
+        <reference Id="acf09ced-77e5-4b43-861c-c3ce8e4c54ec" name="Business">
+          <ArtifactNode Label="Business" Category="CodeSchema_Project" Id="(Assembly=../Business/Business.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=Business)" Label="Business.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="f45aa162-34bc-4aaf-99fa-d95768ce2b27" name="View Model Layer">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="5513646c-4ce6-4519-9ba2-fd92a01dfa69" direction="Forward">
+          <layerMoniker Id="1bdfefca-60ae-4142-b023-d673b03544c3" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="4576d28a-6d2f-4693-8c7a-f34542fd95e8" direction="Forward">
+          <layerMoniker Id="31c0acb3-6e96-4085-8d01-49de124fd432" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="82dd6780-4981-4832-969e-a5c78ca1a569" name="EmployeeVM.cs">
+          <references>
+            <reference Id="985b35f8-36c6-41e1-ae05-6bd625f7677a" name="EmployeeVM.cs">
+              <ArtifactNode Label="EmployeeVM.cs" Category="CodeSchema_ProjectItem" Id="(Assembly=../ViewModels/ViewModels.csproj File=../ViewModels/EmployeeVM.cs)">
+                <Category Ref="File" />
+              </ArtifactNode>
+              <ExpandedNode Id="(Assembly=ViewModels Namespace=ViewModels Type=EmployeeVM)" Label="EmployeeVM" Category="CodeSchema_Class">
+                <LinkCategory Ref="Contains" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+      </childLayers>
+      <references>
+        <reference Id="3b46874c-9b74-4bec-8b96-af9d1058d867" name="EmployeeVM.cs1">
+          <ArtifactNode Label="EmployeeVM.cs" Category="CodeSchema_ProjectItem" Id="(Assembly=../ViewModels/ViewModels.csproj File=../ViewModels/EmployeeVM.cs)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=ViewModels Namespace=ViewModels Type=EmployeeVM)" Label="EmployeeVM" Category="CodeSchema_Class">
+            <LinkCategory Ref="Contains" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="b82faf7c-eb93-49f6-8f24-9ca4ca76a0eb" name="Unit Test ">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="3d9b5436-4a1a-438e-9aec-378029b9af9c" direction="Forward">
+          <layerMoniker Id="f45aa162-34bc-4aaf-99fa-d95768ce2b27" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="3730e7fa-5cdc-4d38-9317-7dbadaf2bab2" name="Views">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="dbff9c44-41b1-4896-b371-4890d4695639" direction="Forward">
+          <layerMoniker Id="f45aa162-34bc-4aaf-99fa-d95768ce2b27" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="5532e9e4-22a7-47ee-a18f-c4c58bb046bb" name="Views">
+          <ArtifactNode Label="Views" Category="CodeSchema_Project" Id="(Assembly=../Views/Views.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=Views)" Label="Views.exe" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.exe" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+  </layers>
+</layerModel>

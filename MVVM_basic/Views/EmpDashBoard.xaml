@@ -1,0 +1,64 @@
+﻿<Window x:Class="Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm ="clr-namespace:ViewModels;assembly=ViewModels"
+        Title="MainWindow" Height="512" Width="525">
+    <Window.DataContext>
+        <vm:EmployeeVM />
+    </Window.DataContext>
+    <Grid Margin="0,0,0,16">
+        <GroupBox  Header="Selected Employee" HorizontalAlignment="Left" Height="174" Margin="10,20,0,0" VerticalAlignment="Top" Width="279">
+            <Grid HorizontalAlignment="Left" Height="145" Margin="0,10,-10,-3" VerticalAlignment="Top" Width="277">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="61*"/>
+                    <ColumnDefinition Width="48*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="First Name:" HorizontalAlignment="Left" Height="29" Margin="10,0,0,0" VerticalAlignment="Top" Width="86"/>
+                <TextBox Text="{Binding SelectedEmployee.Name}" Margin="96,0,18,116" Grid.ColumnSpan="2" />
+                <Label Content="Last Name:" HorizontalAlignment="Left" Height="29" Margin="10,34,0,0" VerticalAlignment="Top" Width="86"/>
+                <TextBox Text="{Binding SelectedEmployee.Last}" Margin="96,35,18,82" Grid.ColumnSpan="2" />
+
+                <Label Content="Salary:" HorizontalAlignment="Left" Height="29" Margin="10,69,0,0" VerticalAlignment="Top" Width="86"/>
+                <TextBox Text="{Binding SelectedEmployee.Salary}" Margin="96,72,18,47" Grid.ColumnSpan="2" />
+
+                <Button Content="Delete" Command="{Binding DeleteEmployee}" Grid.ColumnSpan="2" Margin="104,104,18,10"></Button>
+            </Grid>
+            
+
+        </GroupBox>
+        <GroupBox Header="Add new Employee" HorizontalAlignment="Left" Height="174" Margin="10,215,0,0" VerticalAlignment="Top" Width="279">
+            <Grid HorizontalAlignment="Left" Height="145" Margin="0,10,-10,-3" VerticalAlignment="Top" Width="277">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="61*"/>
+                    <ColumnDefinition Width="48*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="First Name:" HorizontalAlignment="Left" Height="29" Margin="10,0,0,0" VerticalAlignment="Top" Width="86"/>
+                <TextBox Text="{Binding NewEmployee.Name}" Margin="96,0,18,116" Grid.ColumnSpan="2" />
+                <Label Content="Last Name:" HorizontalAlignment="Left" Height="29" Margin="10,34,0,0" VerticalAlignment="Top" Width="86"/>
+                <TextBox Text="{Binding NewEmployee.Last}" Margin="96,34,18,82" Grid.ColumnSpan="2" />
+
+                <Label Content="Salary:" HorizontalAlignment="Left" Height="29" Margin="10,69,0,0" VerticalAlignment="Top" Width="86"/>
+                <TextBox Text="{Binding NewEmployee.Salary}" Margin="96,69,18,51" Grid.ColumnSpan="2" />
+                <Button Command="{Binding AddNewEmployee}" Content="Add" Grid.ColumnSpan="2" Margin="104,104,18,10"/>
+            </Grid>
+
+        </GroupBox>
+
+        <ListView Name="MyListView" ItemsSource="{Binding EpmManager.Employees}" SelectedItem="{Binding SelectedEmployee}" HorizontalAlignment="Left" Height="356" Margin="312,20,0,0" VerticalAlignment="Top" Width="195">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel FlowDirection="LeftToRight">
+                        <Label Content="{Binding Name}"></Label>
+                        <Label Content="{Binding Last}"></Label>
+                        <Label Content="{Binding Salary}"></Label>
+                        
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
+        </ListView>
+        <Label Content="Average Salary:" HorizontalAlignment="Left" Margin="26,421,0,0" VerticalAlignment="Top" Width="102"/>
+        <Label Content="Label" HorizontalAlignment="Left" Height="26" Margin="128,421,0,0" VerticalAlignment="Top" Width="132"/>
+
+    </Grid>
+</Window>
