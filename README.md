@@ -1,2 +1,2 @@
 # myLearings
-This repository is mainly to have all my research work.
+This repository is to have all my research work on .NET area. 
